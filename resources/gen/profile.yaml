@@ -1,0 +1,64 @@
+---
+  name: Profile
+  #apiVer: v1
+  #plural: Profiles
+  propertyDefs:
+    - name: Email
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: Location
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: Bio
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: Moto
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: Website
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: AniversaryDate
+      type: timestamp
+      length: 0
+      isKey: false
+      isUnique: false
+    - name: Host
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: AvatarPath
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: HeaderPath
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: OwnerID
+      type: uuid
+      length: 36
+      isKey: false
+      isUnique: false
+      references:
+        model: account
+        property: ID
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: true
+    - timeBounds: true
+    - logicalStatus: true

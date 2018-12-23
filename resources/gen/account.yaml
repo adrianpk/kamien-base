@@ -1,0 +1,27 @@
+---
+  name: Account
+  #apiVer: v1
+  #plural: Accounts
+  propertyDefs:
+    - name: OwnerID
+      type: uuid
+      length: 36
+      isKey: false
+      isUnique: false
+      references:
+        model: user
+        property: ID
+    - name: ParentID
+      type: uuid
+      length: 36
+      isKey: false
+      isUnique: false
+      references:
+        model: account
+        property: ID
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: true
+    - timeBounds: true
+    - logicalStatus: true

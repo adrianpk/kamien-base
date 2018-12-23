@@ -1,0 +1,42 @@
+<!-- Head -->
+{{define "head"}}
+{{$account := .Model}}
+Delete Account - {{$account.Name.String}}
+{{end}}
+<!-- Head -->
+
+<!-- Body -->
+{{define "body"}}
+{{$account := .Model}}
+
+<!-- Contextual bar -->
+{{template "context_bar" .}}
+<!-- Contextual bar -->
+
+<!-- Header -->
+{{$title := $account.Name.String | printf "Delete Account - %s"}}
+{{template "header" $title}}
+<!-- Header -->
+
+<!-- Data -->
+  <div>
+
+    <div class="field">
+      <label class="label" for="name">Name</label>
+      {{$account.Name.String}}
+    </div>
+
+    <div class="field">
+      <label class="label" for="name">Email</label>
+      {{$account.Email.String}}
+    </div>
+
+    <form accept-charset="UTF-8" action="{{$account | accountPathID}}" method="POST">
+      <input name="_method" type="hidden" value="DELETE">
+      <input class="button is-danger" type="submit" value="Confirm Delete">
+    </form>
+  </div>
+<!-- Data -->
+
+{{end}}
+<!-- Body -->

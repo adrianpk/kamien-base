@@ -1,0 +1,56 @@
+{{define "form"}} {{$account := .Model}} {{$action := .Action}} {{$csrf := .CSRF}}
+<div class="level">
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <div class="tile is-child">
+        <form accept-charset="UTF-8" action="{{$action.Target}}" method="POST">
+          <input name="_method" type="hidden" value="{{$action.Method}}">
+          {{ $csrf.csrfField}}
+          <div class="field">
+            <label class="label" for="owner-id">OwnerID</label>
+            <input class="input is-primary" id="owner-id" name="owner-id" type="text" placeholder="" value="{{$account.OwnerID.UUID}}">
+          </div>
+          <div class="field">
+            <label class="label" for="parent-id">ParentID</label>
+            <input class="input is-primary" id="parent-id" name="parent-id" type="text" placeholder="" value="{{$account.ParentID.UUID}}">
+          </div>
+          <div class="is-grouped is-pulled-left">
+            {{if not $account.IsNew}}
+            <!-- Update -->
+            <div class="control">
+              <input class="button is-link" type="submit" value="Update">
+            </div>
+            <!-- Update -->
+            {{else}}
+            <!-- Save -->
+            <div class="control">
+              <input class="button is-link" type="submit" value="Save">
+            </div>
+            <!-- Save -->
+            {{end}}
+          </div>
+        </form>
+        <br/>
+        <br/>
+        <div class="is-grouped is-pulled-left">
+          {{if not $account.IsNew}}
+          <!-- Init delete -->
+          <div class="control">
+            <a class="button is-danger is-outlined is-jsonly" data-confirm="Are you sure?" data-csrf="" data-method="delete" data-to="{{$account | accountPathID}}"
+              href="#" rel="nofollow">Delete</a>
+          </div>
+          <div class="control">
+            <noscript>
+              <form accept-charset="UTF-8" action="{{$account | accountPathInitDelete}}" method="POST">
+                <input class="button is-danger is-outlined" type="submit" value="Delete">
+              </form>
+            </noscript>
+          </div>
+          <!-- Init delete -->
+        {{end}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{end}}

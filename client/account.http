@@ -1,0 +1,52 @@
+#  User
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:user-id = 1f5825d4-fc77-4e70-9aca-c896e840c5af
+:account-id = b1b196cd-b414-444c-adc4-313113b6311d
+:user-id-upd = b310df8e-e6fa-4c62-96db-a4c9a550c329
+:account-id-upd = 9e04f817-a79a-4881-9dde-4d6e93e8e494
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/accounts
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/accounts/:account-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/accounts
+Content-Type: application/json
+{
+  "data": {
+	  "ownerID": ":user-id",
+	  "parentID": ":account-id"
+  }
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/accounts/:account-id
+Content-Type: application/json
+{
+	"data": {
+	  "ownerID": ":user-id-upd",
+	  "parentID": ":account-id-upd"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:account-id
+#+END_SRC

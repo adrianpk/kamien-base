@@ -1,0 +1,21 @@
+---
+  name: PropertySet
+  #apiVer: v1
+  plural: PropertySets
+  propertyDefs:
+    - name: Position
+      type: integer
+      length: 16
+      isKey: false
+      isUnique: false
+    - name: HolderID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: false
+    - timeBounds: false
+    - logicalStatus: true

@@ -1,0 +1,38 @@
+server:
+  address: "0.0.0.0"
+  port: 8080
+  SSLPort: 8081
+  publicDir: "~/Web/{{.AppNameLowercase}}/public/"
+  logFile: "~/Web/{{.AppNameLowercase}}/logs/{{.AppNameLowercase}}.log"
+  logLevel: "debug"
+  useExtTemplates: false
+  autoreload: true
+  domains:
+    - "0.0.0.0"
+    - "localhost"
+    - "www.{{.AppNameLowercase}}100.com"
+    - "www.{{.AppNameLowercase}}101.com"
+
+database:
+  address: "0.0.0.0"
+  port: 5432
+  name: "{{.AppNameLowercase}}_test"
+  user: "DB_USERNAME"
+  password: "DB_PASSWORD"
+  SSL: "disable"
+
+tasks:
+  migration:
+    mgType: "no"
+    # mgType: "migrate"
+    # mgType: "migrate_n"
+    # mgType: "rollback_n"
+    # mgType: "rollback_all"
+    # mgType: "drop"
+    steps: 0
+    migrateToVersion: 0
+  # Seding - only works in development and test
+  seed: "no"
+  # seed: "seed"
+  # seed: "reset"
+  # seed: "reset_and_seed"

@@ -1,0 +1,19 @@
+---
+  name: Permission
+  #apiVer: v1
+  #plural: Permissions
+  propertyDefs:
+    - name: OrganizationID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: account
+        property: ID
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: false
+    - timeBounds: false
+    - logicalStatus: true

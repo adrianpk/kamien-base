@@ -1,0 +1,35 @@
+---
+  name: UserRole
+  #apiVer: v1
+  plural: UserRoles
+  propertyDefs:
+    - name: OrganizationID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: account
+        property: ID
+    - name: UserID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: user
+        property: ID
+    - name: RoleID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: role
+        property: ID
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: false
+    - timeBounds: false
+    - logicalStatus: true

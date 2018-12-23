@@ -1,0 +1,33 @@
+server:
+  address: "0.0.0.0"
+  port: 8080
+  publicDir: "~/Web/{{.AppNameLowercase}}/public/"
+  logFile: "~/Web/app_name/logs/{{.AppNameLowercase}}.log"
+  logLevel: "error"
+  useExtTemplates: false
+  autoreload: true
+  domains:
+    - "0.0.0.0"
+    - "localhost"
+    - "www.{{.AppNameLowercase}}100.com"
+    - "www.{{.AppNameLowercase}}101.com"
+
+database:
+  address: "0.0.0.0"
+  port: 5432
+  name: "dbname"
+  user: "dbuser"
+  password: "dbpaswword"
+  SSL: "enable"
+
+tasks:
+  migration: "no"
+  # migration: "migrate"
+  # migration: "rollback"
+  # migration: "rollback_n" # where n is 1, 2, 3...
+  # migration: "rollback_all"
+  # Seding - only works in development and test
+  seed: "no"
+  # seed: "seed"
+  # seed: "reset"
+  # seed: "reset_and_seed"

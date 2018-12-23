@@ -1,0 +1,55 @@
+# ResourcePermission
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:resource-permission-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc 
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/resource-permissions
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/resource-permissions/:resource-permission-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/resource-permissions
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"resource-id": "",
+			"permission-id": "",
+			"name": "NamenjRX",
+			"description": "DescRIrW"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/resource-permissions/:resource-permission-id
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"resource-id": "",
+			"permission-id": "",
+			"name": "NamevOSd",
+			"description": "DescrrER"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:resource-permission-id
+#+END_SRC

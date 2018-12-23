@@ -1,0 +1,30 @@
+{{define "view"}}
+{{$user := .Model}}
+  <div class="card">
+    <div class="card-image">
+      <div class="image is-4by3">
+        <img alt="" src="/images/realestate/realestate1.png">
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <div class="image is-48x48">
+            <img alt="" src="/images/users/user1.png">
+          </div>
+        </div>
+        <div class="media-content">
+          <p class="title is-4"></p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+      <div class="content">
+        Lorem Ipsum
+        <a>@{{$user.Username.String}}</a>
+        <a href="#">#css</a><!-- react-text: 54 -->
+        <a href="#">#responsive</a>
+        <div>11:09 PM - 1 Jan 2016</div>
+      </div>
+    </div>
+  </div>
+{{end}}

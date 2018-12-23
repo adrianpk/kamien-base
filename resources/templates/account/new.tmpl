@@ -1,0 +1,26 @@
+<!-- Head -->
+{{define "head"}}
+{{$account := .Model}}
+New Account
+{{end}}
+<!-- Head -->
+
+<!-- Body -->
+{{define "body"}}
+{{$account := .Model}}
+
+<!-- Contextual bar -->
+{{template "context_bar" .}}
+<!-- Contextual bar -->
+
+<!-- Header -->
+{{$title := "New Account"}}
+{{template "header" $title}}
+<!-- Header -->
+
+<!-- Form -->
+{{template "form" .}}
+<!-- Form -->
+
+{{end}}
+<!-- Body -->

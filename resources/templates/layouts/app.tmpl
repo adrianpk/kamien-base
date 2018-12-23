@@ -1,0 +1,194 @@
+{{define "app"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{{ template "head" . }}</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <noscript>
+    <style>
+      .is-jsonly {
+        display: none !important
+      }
+    </style>
+  </noscript>
+</head>
+
+<body class="layout-default">
+  <div id="app">
+
+    <!-- Navigation bar -->
+    <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+
+            <!-- Logo -->
+            <img alt="{{.AppNamePascalCase}}" height="28">
+            <!-- Logo -->
+          </a>
+
+          <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuIndex">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="navMenuIndex" class="navbar-menu">
+
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item bd-navbar-item-love">
+                <span class="icon has-text-info">
+                  <i class="fas fa-building"></i>
+                </span>
+                <span>Admin</span>
+              </a>
+              <div id="moreDropdown" class="navbar-dropdown">
+                <a class="navbar-item has-background-grey-lighter" href="/real-estate">
+                  <span>
+                    <strong>Users</strong>
+                  </span>
+                </a>
+                <a class="navbar-item" href="/users">
+                  <span>
+                    <span class="icon has-text-primary">
+                      <i class="fas fa-user"></i>
+                    </span>
+                    <strong>Users</strong>
+                    <br> Users list
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item bd-navbar-item-love">
+                <span class="icon has-text-info">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span>Account</span>
+              </a>
+              <div id="moreDropdown" class="navbar-dropdown">
+                <a class="navbar-item" href="/profile">
+                  <span>
+                    <span class="icon has-text-success">
+                      <i class="fas fa-id-card"></i>
+                    </span>
+                    <strong>Profile</strong>
+                    <br> Edit profile
+                  </span>
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item " href="/">
+                  <span>
+                    <span class="icon has-text-primary">
+                      <i class="fas fa-wrench"></i>
+                    </span>
+                    <strong>Settings</strong>
+                    <br> Edit account
+                  </span>
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                  <div class="field is-grouped is-grouped-multiline">
+                    <p class="control">
+                      <a class="button is-primary" href="/signout">
+                        <strong>Signout</strong>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navigation bar -->
+
+    <div class="section">
+      <div class="container">
+        <div class="tile is-ancestor">
+          <div class="tile is-parent is-hidden-mobile">
+            <div class="tile is-child green post">
+              <div class="section">
+                [left]
+              </div>
+            </div>
+          </div>
+          <div class="tile is-9 is-parent is-block">
+            <div class="section">
+              <!-- Flash message -->
+              {{template "flash_message" .}}
+              <!-- Flash message -->
+              <!-- Body -->
+              {{template "body" .}}
+              <!-- Body -->
+            </div>
+          </div>
+          <div class="tile is-vertical is-parent is-hidden-mobile">
+            <div class="tile is-child <blue></blue> post">
+              <div class="section">
+                [right-top]
+              </div>
+            </div>
+            <div class="tile is-child gold post">
+              <div class="section">
+                [right-bottom]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottombar -->
+    <div class="navbar has-shadow is-spaced is-fixed-bottom">
+      <div class="navbar-brand">
+        <a class="navbar-item is-expanded is-block has-text-centered">
+          <i class="fa fa-home"></i>
+        </a>
+        <a class="navbar-item is-expanded is-block has-text-centered">
+          <i class="fa fa-search"></i>
+        </a>
+        <a class="navbar-item is-expanded is-block has-text-centered">
+          <i class="fa fa-bell"></i>
+        </a>
+        <a class="navbar-item is-expanded is-block has-text-centered">
+          <i class="fa fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Bottombar -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-ujs/1.2.2/rails.min.js"></script>
+    <!-- <script src="/js/jquery.validate.min.js"></script> -->
+    <!-- <script src="/js/tether.min.js"></script> -->
+    <!-- Prev -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous">
+    <!-- <script src="< static_path(@conn, " /js/app.js ") %>"></script> -->
+    <!-- <script src="< static_path(@conn, " /js/vendor.js ") %>"></script> -->
+  </div>
+</body>
+
+</html>
+{{end}}
+
+<!-- Form -->
+{{ define "form" }}
+{{ end }}
+<!-- Form -->

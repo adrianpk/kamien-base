@@ -1,0 +1,73 @@
+# Property
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:property-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/properties
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/properties/:property-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/properties
+Content-Type: application/json
+{
+	"data": {
+			"set-name": "SetNqFZn",
+			"property-set-id": "",
+			"data-type": "DataFCdb",
+			"boolean-value": true,
+			"date-value": "2018-12-08T04:00:53+01:00",
+			"decimal-value": "-0.833332",
+			"geo-point-value": "",
+			"integer-value": "0",
+			"string-value": "StrilTcC",
+			"timestamp-value": "2018-12-08T04:00:53+01:00",
+			"uuid-value": "",
+			"position": 0,
+			"name": "NamesUjF",
+			"description": "DescrAkk"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/properties/:property-id
+Content-Type: application/json
+{
+	"data": {
+			"set-name": "SetNcvXV",
+			"property-set-id": "",
+			"data-type": "DataFWoE",
+			"boolean-value": false,
+			"date-value": "2018-12-08T04:00:53+01:00",
+			"decimal-value": "0.455281",
+			"geo-point-value": "",
+			"integer-value": "0",
+			"string-value": "StriNEiJ",
+			"timestamp-value": "2018-12-08T04:00:53+01:00",
+			"uuid-value": "",
+			"position": "0",
+			"name": "NameWVFa",
+			"description": "DescwdGX"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:property-id
+#+END_SRC

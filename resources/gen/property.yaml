@@ -1,0 +1,69 @@
+---
+  name: Property
+  #apiVer: v1
+  plural: Properties
+  propertyDefs:
+    - name: SetName
+      type: string
+      length: 64
+      isKey: false
+      isUnique: false
+    - name: SetID
+      type: uuid
+      length: 36
+      isKey: false
+      isUnique: false
+      references:
+        model: property_sets
+        property: ID
+    - name: DataType
+      type: string
+      length: 32
+      isKey: false
+      isUnique: false
+    - name: BooleanValue
+      type: boolean
+      isKey: false
+      isUnique: false
+    - name: DateValue
+      type: date
+      isKey: false
+      isUnique: false
+    - name: DecimalValue
+      type: decimal
+      length: 64
+      isKey: false
+      isUnique: false
+    - name: GeoPointValue
+      type: geolocation
+      isKey: false
+      isUnique: false
+    - name: IntegerValue
+      type: integer
+      length: 64
+      isKey: false
+      isUnique: false
+    - name: StringValue
+      type: string
+      length: 64
+      isKey: false
+      isUnique: false
+    - name: TimestampValue
+      type: timestamp
+      isKey: false
+      isUnique: false
+    - name: UUIDValue
+      type: uuid
+      isKey: false
+      isUnique: false
+    - name: Position
+      type: integer
+      length: 16
+      isKey: false
+      isUnique: false
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: false
+    - timeBounds: false
+    - logicalStatus: true

@@ -1,0 +1,47 @@
+# User
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:user-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc 
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/users
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/users/:user-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/users
+Content-Type: application/json
+{
+	"data": {
+			"name": "NameKoBU"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/users/:user-id
+Content-Type: application/json
+{
+	"data": {
+			"name": "NameSmWE"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:user-id
+#+END_SRC

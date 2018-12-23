@@ -1,0 +1,51 @@
+# Role
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:role-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc 
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/roles
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/roles/:role-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/roles
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "656ab9c9-70c9-4f85-af29-daee4dc241d5",
+			"name": "NameuqPy",
+			"description": "DescSMkH"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/roles/:role-id
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "f9a20c67-fd0d-469c-80c2-84f94b7d9f4e",
+			"name": "NameHCQD",
+			"description": "DescpkTm"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:role-id
+#+END_SRC

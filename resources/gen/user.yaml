@@ -1,0 +1,57 @@
+---
+  name: User
+  #apiVer: v1
+  #plural: Users
+  propertyDefs:
+    - name: Username
+      type: string
+      length: 32
+      isKey: false
+      isUnique: true
+    - name: Password
+      type: string
+      length: 32
+      isVirtual: true
+    - name: PasswordConfirmation
+      type: string
+      length: 32
+      isVirtual: true
+    - name: PasswordHash
+      type: string
+      length: 128
+      isKey: false
+      isUnique: false
+    - name: Email
+      type: string
+      length: 255
+      isKey: false
+      isUnique: true
+    - name: GivenName
+      type: string
+      length: 64
+      isKey: false
+      isUnique: false
+    - name: MidleNames
+      type: string
+      length: 128
+      isKey: false
+      isUnique: false
+    - name: FamilyName
+      type: string
+      length: 128
+      isKey: false
+      isUnique: false
+    - name: ContextID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: account
+        property: ID
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: true
+    - timeBounds: true
+    - logicalStatus: true

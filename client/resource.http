@@ -1,0 +1,53 @@
+# Resource
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:resource-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc 
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/resources
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/resources/:resource-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/resources
+Content-Type: application/json
+{
+	"data": {
+			"tag": "TagoZVXf",
+			"organization-id": "",
+			"name": "NameaKZY",
+			"description": "DescRJuU"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/resources/:resource-id
+Content-Type: application/json
+{
+	"data": {
+			"tag": "TagETHsE",
+			"organization-id": "",
+			"name": "NameDkEq",
+			"description": "DescpwhX"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:resource-id
+#+END_SRC

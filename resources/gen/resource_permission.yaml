@@ -1,0 +1,35 @@
+---
+  name: ResourcePermission
+  #apiVer: v1
+  plural: ResourcePermissions
+  propertyDefs:
+    - name: OrganizationID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: account
+        property: ID
+    - name: ResourceID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: resource
+        property: ID
+    - name: PermissionID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: permission
+        property: ID
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: false
+    - timeBounds: false
+    - logicalStatus: true

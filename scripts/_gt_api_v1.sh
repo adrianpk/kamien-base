@@ -1,0 +1,11 @@
+#!/bin/sh
+clear
+_gt_user_api_v1.sh
+_gt_account_api_v1.sh
+_gt_profile_api_v1.sh
+_gt_resource_api_v1.sh
+_gt_permission_api_v1.sh
+_gt_role_api_v1.sh
+_gt_resource_permission_api_v1.sh
+_gt_role_permission_api_v1.sh
+_gt_user_role_api_v1.sh

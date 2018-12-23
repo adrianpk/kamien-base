@@ -1,0 +1,26 @@
+<!-- Head -->
+{{define "head"}}
+{{$user := .Model}}
+New User
+{{end}}
+<!-- Head -->
+
+<!-- Body -->
+{{define "body"}}
+{{$user := .Model}}
+
+<!-- Contextual bar -->
+{{template "context_bar" .}}
+<!-- Contextual bar -->
+
+<!-- Header -->
+{{$title := "New User"}}
+{{template "header" $title}}
+<!-- Header -->
+
+<!-- Form -->
+{{template "form" .}}
+<!-- Form -->
+
+{{end}}
+<!-- Body -->

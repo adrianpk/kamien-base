@@ -1,0 +1,26 @@
+<!-- Head -->
+{{define "head"}}
+{{$account := .Model}}
+Account Index
+{{end}}
+<!-- Head -->
+
+<!-- Body -->
+{{define "body"}}
+{{$account := .Model}}
+
+<!-- Contextual bar -->
+{{template "context_bar" .}}
+<!-- Contextual bar -->
+
+<!-- Header -->
+{{$title := "Accounts Index"}}
+{{template "header" $title}}
+<!-- Header -->
+
+<!-- Form -->
+{{template "list" .}}
+<!-- Form -->
+
+{{end}}
+<!-- Body -->

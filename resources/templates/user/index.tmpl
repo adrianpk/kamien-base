@@ -1,0 +1,26 @@
+<!-- Head -->
+{{define "head"}}
+{{$user := .Model}}
+User Index
+{{end}}
+<!-- Head -->
+
+<!-- Body -->
+{{define "body"}}
+{{$user := .Model}}
+
+<!-- Contextual bar -->
+{{template "context_bar" .}}
+<!-- Contextual bar -->
+
+<!-- Header -->
+{{$title := "Users Index"}}
+{{template "header" $title}}
+<!-- Header -->
+
+<!-- Form -->
+{{template "list" .}}
+<!-- Form -->
+
+{{end}}
+<!-- Body -->

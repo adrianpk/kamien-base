@@ -1,0 +1,10 @@
+{{define "flash_message"}}
+{{ range $index, $flash := .Flashes }}
+{{if ne $flash.Message ""}}
+<div class="notification {{$flash.KindClass}}">
+  <button class="delete is-jsonly" onclick="//dismiss(this)"></button>
+  {{$flash.Message}}
+</div>
+{{end}}
+{{end}}
+{{end}}

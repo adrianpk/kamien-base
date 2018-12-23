@@ -1,0 +1,41 @@
+---
+  name: KeyValue
+  #apiVer: v1
+  plural: KeyValues
+  propertyDefs:
+    - name: SetName
+      type: string
+      length: 32
+      isKey: false
+      isUnique: false
+    - name: KeyGroup
+      type: string
+      length: 32
+      isKey: false
+      isUnique: false
+    - name: KeySubgroup
+      type: string
+      length: 32
+      isKey: false
+      isUnique: false
+    - name: Value
+      type: string
+      length: 255
+      isKey: false
+      isUnique: false
+    - name: Locale
+      type: string
+      length: 16
+      isKey: false
+      isUnique: false
+    - name: Position
+      type: integer
+      length: 16
+      isKey: false
+      isUnique: false
+  implements:
+    - detail: false
+    - authentication: false
+    - geolocation: false
+    - timeBounds: false
+    - logicalStatus: true

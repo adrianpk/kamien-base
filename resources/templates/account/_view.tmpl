@@ -1,0 +1,43 @@
+{{define "view"}}
+{{$account := .Model}}
+<div class="card">
+  <div class="card-header">
+    <p class="card-header-title">
+      {{$account.Name.String}}
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </div>
+  <div class="card-content">
+    <div class="content">
+      <div class="field">
+        <label class="label">Type</label>
+        <label class="label is-primary has-text-info">{{$account.AccountType.String}}</label>
+      </div>
+      <div class="field">
+        <label class="label">Owner</label>
+        <label class="label is-primary has-text-info">{{$account.OwnerID.UUID}}</label>
+      </div>
+      <div class="field">
+        <label class="label">Parent</label>
+        <label class="label is-primary has-text-info">{{$account.ParentID.UUID}}</label>
+      </div>
+    </div>
+  </div>
+  <footer class="card-footer">
+		<a href="{{$account | accountPathEdit}}" class="button is-text is-jsonly has-text-centered" style="display: inline-block">
+		  <span class="icon">
+			  <i class="fas fa-edit"></i>
+			</span>
+		</a>
+		<noscript>
+		  <a href="{{$account | accountPathEdit}}" class="button is-text has-text-centered">
+			  Edit
+			</a>
+		</noscript>
+  </footer>
+</div>
+{{end}}

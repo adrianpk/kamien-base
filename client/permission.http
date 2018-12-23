@@ -1,0 +1,51 @@
+# Permission
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:permission-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc 
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/permissions
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/permissions/:permission-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/permissions
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"name": "NameMnNB",
+			"description": "DescAszr"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/permissions/:permission-id
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"name": "NamezTNc",
+			"description": "Descltqo"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:permission-id
+#+END_SRC

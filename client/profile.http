@@ -1,0 +1,71 @@
+# Profile
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:profile-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/profiles
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/profiles/:profile-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/profiles
+Content-Type: application/json
+{
+	"data": {
+			"email": "EmaibbTF",
+			"bio": "BioOkPyW",
+			"moto": "MotojAnm",
+			"website": "WebsGGfW",
+			"aniversary-date": "2018-11-30T01:18:27+01:00",
+			"host": "HostsvXH",
+			"avatar-path": "AvatCfZB",
+			"header-path": "HeadTAvF",
+			"owner-id": "",
+			"name": "NameDUFJ",
+			"description": "DescIPbh",
+			"starts-at": "2018-11-30T01:18:27+01:00",
+			"ends-at": "2018-11-30T01:18:27+01:00"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/profiles/:profile-id
+Content-Type: application/json
+{
+	"data": {
+			"email": "EmaiwXsG",
+			"bio": "BioDcJCE",
+			"moto": "MototymX",
+			"website": "WebsTGdw",
+			"aniversary-date": "2018-11-30T01:18:27+01:00",
+			"host": "HostVXvJ",
+			"avatar-path": "AvatdUNV",
+			"header-path": "Headancp",
+			"owner-id": "",
+			"name": "NamevkoU",
+			"description": "DesczjxK",
+			"starts-at": "2018-11-30T01:18:27+01:00",
+			"ends-at": "2018-11-30T01:18:27+01:00"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:profile-id
+#+END_SRC

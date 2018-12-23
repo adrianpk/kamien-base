@@ -1,0 +1,55 @@
+# RolePermission
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:role-permission-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc 
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/role-permissions
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/role-permissions/:role-permission-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/role-permissions
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"role-id": "",
+			"permission-id": "",
+			"name": "NameaooT",
+			"description": "DescLBiW"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/role-permissions/:role-permission-id
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"role-id": "",
+			"permission-id": "",
+			"name": "NamerTKF",
+			"description": "DesccbPU"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:role-permission-id
+#+END_SRC

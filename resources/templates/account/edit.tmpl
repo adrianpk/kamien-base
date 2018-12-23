@@ -1,0 +1,26 @@
+<!-- Head -->
+{{define "head"}}
+{{$account := .Model}}
+Edit Account - {{$account.Name.String}}
+{{end}}
+<!-- Head -->
+
+<!-- Body -->
+{{define "body"}}
+{{$account := .Model}}
+
+<!-- Contextual bar -->
+{{template "context_bar" .}}
+<!-- Contextual bar -->
+
+<!-- Header -->
+{{$title := $account.Name.String | printf "Edit Account - %s"}}
+{{template "header" $title}}
+<!-- Header -->
+
+<!-- Form -->
+{{template "form" .}}
+<!-- Form -->
+
+{{end}}
+<!-- Body -->

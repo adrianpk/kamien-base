@@ -1,0 +1,18 @@
+{{define "context_bar"}}
+{{$user := .Model}}
+<div class="level">
+  <div class="level-right">
+  </div>
+  <div class="level-right">
+    <div class="tile is-ancestor is-pulled-right">
+      <div class="tile is-pulled-right">
+        <a class="button is-light is-small" href="{{accountPath}}">List</a>
+      </div>
+      <div class="tile is-pulled-right">
+        <a class="button is-light is-small" href="{{accountPathNew}}">New</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+{{end}}

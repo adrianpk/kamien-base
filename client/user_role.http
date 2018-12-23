@@ -1,0 +1,55 @@
+# UserRole
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:user-role-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc 
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/user-roles
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/user-roles/:user-role-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/user-roles
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"user-id": "",
+			"role-id": "",
+			"name": "NameyZFo",
+			"description": "DescvVGK"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/user-roles/:user-role-id
+Content-Type: application/json
+{
+	"data": {
+			"organization-id": "",
+			"user-id": "",
+			"role-id": "",
+			"name": "NameJBoC",
+			"description": "DescFQUA"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:user-role-id
+#+END_SRC

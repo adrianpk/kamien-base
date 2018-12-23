@@ -1,0 +1,24 @@
+---
+  name: Resource
+  #apiVer: v1
+  #plural: Resources
+  propertyDefs:
+    - name: Tag
+      type: string
+      length: 16
+      isKey: false
+      isUnique: true
+    - name: OrganizationID
+      type: uuid
+      length: 16
+      isKey: false
+      isUnique: false
+      references:
+        model: account
+        property: ID
+  implements:
+    - detail: true
+    - authentication: false
+    - geolocation: false
+    - timeBounds: false
+    - logicalStatus: true

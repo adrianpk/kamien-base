@@ -1,0 +1,53 @@
+# PropertySet
+:host = http://localhost
+:port = 8081
+:api-ver = v1
+:property-set-id = c07e3664-fdd0-4e5c-a389-61b052ac1fdc
+
+
+# Index
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/property-sets
+#+END_SRC
+
+
+# Get
+#+BEGIN_SRC http :pretty
+GET :host::port/api/:api-ver/property-sets/:property-set-id
+#+END_SRC
+
+
+# Create
+#+BEGIN_SRC http :pretty
+POST :host::port/api/:api-ver/property-sets
+Content-Type: application/json
+{
+	"data": {
+			"position": "0",
+			"holder-id": "",
+			"name": "NameqFtI",
+			"description": "Deschtnz"
+	}
+}
+#+END_SRC
+
+
+# Update
+#+BEGIN_SRC http :pretty
+PUT :host::port/api/:api-ver/property-sets/:property-set-id
+Content-Type: application/json
+{
+	"data": {
+			"position": "1",
+			"holder-id": "",
+			"name": "NamemLhj",
+			"description": "DescdsCU"
+	}
+}
+#+END_SRC
+
+
+# Delete
+#+BEGIN_SRC http :pretty
+DELETE :host/api/:api-ver/:property-set-id
+#+END_SRC
