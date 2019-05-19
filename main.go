@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 Adrian P.K. <apk@kuguar.io>
+ * Copyright (c) 2018 Adrian K <adrian.git@kuguar.dev>
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
